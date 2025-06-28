@@ -1,6 +1,6 @@
 package zaeonninezero.grenadesadozen;
 
-//import zaeonninezero.grenadesadozen.init.*;
+import zaeonninezero.grenadesadozen.init.*;
 //import zaeonninezero.grenadesadozen.client.ClientHandler;
 
 import com.mrcrayfish.guns.client.CustomGunManager;
@@ -24,7 +24,6 @@ public class GrenadesADozen {
         public ItemStack makeIcon()
         {
             ItemStack stack = new ItemStack(initItems.COMBAT_PISTOL.get());
-            stack.getOrCreateTag().putInt("IgnoreAmmo", 1);
             return stack;
         }
 
@@ -43,6 +42,7 @@ public class GrenadesADozen {
 		MinecraftForge.EVENT_BUS.register(this);
 		
 		//Registers all of the Deferred Registers from the init classes.
+		ModEffects.EFFECTS.register(bus);
 		//initItems.ITEMS.register(bus);
 		//initSounds.SOUNDS.register(bus);
 		
