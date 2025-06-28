@@ -3,12 +3,16 @@ package zaeonninezero.grenadesadozen;
 import zaeonninezero.grenadesadozen.init.*;
 //import zaeonninezero.grenadesadozen.client.ClientHandler;
 
+import com.mrcrayfish.guns.Config;
+
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -33,6 +37,8 @@ public class GrenadesADozen {
     };
 	
 	public GrenadesADozen() {
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, GrenadesConfig.commonSpec);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, GrenadesConfig.serverSpec);
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		
 		//Registers all of the Deferred Registers from the init classes.
@@ -43,7 +49,7 @@ public class GrenadesADozen {
 		ModSounds.SOUNDS.register(bus);
 
 		bus.addListener(this::setup);
-		bus.addListener(this::onClientSetup);
+		//bus.addListener(this::onClientSetup);
 		MinecraftForge.EVENT_BUS.register(this);
 		
 	}
