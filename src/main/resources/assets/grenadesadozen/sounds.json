@@ -1,0 +1,8 @@
+{
+  "entity.smoke_grenade.explosion": {
+    "subtitle":"subtitle.cgm.smoke_grenade_explodes",
+    "sounds": [
+      "grenadesadozen:entity.smoke_grenade.explode",
+    ]
+  }
+}

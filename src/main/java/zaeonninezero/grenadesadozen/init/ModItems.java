@@ -1,7 +1,7 @@
 package zaeonninezero.grenadesadozen.init;
 
 import zaeonninezero.grenadesadozen.GrenadesADozen;
-import zaeonninezero.grenadesadozen.item.*;
+//import zaeonninezero.grenadesadozen.item.*;
 import zaeonninezero.grenadesadozen.item.grenade.*;
 import com.mrcrayfish.guns.item.AmmoItem;
 import com.mrcrayfish.guns.item.*;

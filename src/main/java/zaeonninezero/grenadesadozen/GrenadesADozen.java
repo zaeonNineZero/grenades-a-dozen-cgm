@@ -33,10 +33,7 @@ public class GrenadesADozen {
     };
 	
 	public GrenadesADozen() {
-		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-		bus.addListener(this::setup);
-		
-		MinecraftForge.EVENT_BUS.register(this);
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		
 		//Registers all of the Deferred Registers from the init classes.
 		ModEffects.EFFECTS.register(bus);
@@ -44,8 +41,11 @@ public class GrenadesADozen {
 		ModItems.ITEMS.register(bus);
 		ModParticleTypes.PARTICLES.register(bus);
 		ModSounds.SOUNDS.register(bus);
+
+		bus.addListener(this::setup);
+		bus.addListener(this::onClientSetup);
+		MinecraftForge.EVENT_BUS.register(this);
 		
-		//bus.addListener(this::onClientSetup);
 	}
 	
 	//Common setup
@@ -54,7 +54,7 @@ public class GrenadesADozen {
 	}
 	
 	//Client setup
-	/*private void onClientSetup(FMLClientSetupEvent event) {
-		event.enqueueWork(ClientHandler::setup);
-	}*/
+	private void onClientSetup(FMLClientSetupEvent event) {
+		//event.enqueueWork(ClientHandler::setup);
+	}
 }

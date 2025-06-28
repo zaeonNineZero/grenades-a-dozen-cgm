@@ -12,12 +12,12 @@ public class ModSounds
 	public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, GrenadesADozen.MOD_ID);
 
 	/* Grenades */
-	public static final RegistryObject<SoundEvent> GRENADE_THROW = register("item.grenade.throw");
-	public static final RegistryObject<SoundEvent> MOLOTOV_LIGHT = register("item.molotov.light");
+	//public static final RegistryObject<SoundEvent> GRENADE_THROW = register("item.grenade.throw");
+	//public static final RegistryObject<SoundEvent> MOLOTOV_LIGHT = register("item.molotov.light");
 
 	/* Explosions */
-	public static final RegistryObject<SoundEvent> INCENDIARY_GRENADE_EXPLOSION = register("entity.incendiary_grenade.explosion");
-	public static final RegistryObject<SoundEvent> MOLOTOV_EXPLOSION = register("entity.molotov.explosion");
+	//public static final RegistryObject<SoundEvent> INCENDIARY_GRENADE_EXPLOSION = register("entity.incendiary_grenade.explosion");
+	//public static final RegistryObject<SoundEvent> MOLOTOV_EXPLOSION = register("entity.molotov.explosion");
 	public static final RegistryObject<SoundEvent> SMOKE_GRENADE_EXPLOSION = register("entity.smoke_grenade.explosion");
 
 	private static RegistryObject<SoundEvent> register(String key)

@@ -2,6 +2,7 @@ package zaeonninezero.grenadesadozen.client.network;
 
 import zaeonninezero.grenadesadozen.GrenadesConfig;
 import zaeonninezero.grenadesadozen.network.message.*;
+import zaeonninezero.grenadesadozen.init.ModParticleTypes;
 import com.mrcrayfish.guns.Config;
 import com.mrcrayfish.guns.client.BulletTrail;
 import com.mrcrayfish.guns.client.CustomGunManager;
@@ -9,7 +10,6 @@ import com.mrcrayfish.guns.client.audio.GunShotSound;
 import com.mrcrayfish.guns.client.handler.BulletTrailRenderingHandler;
 import com.mrcrayfish.guns.client.handler.GunRenderingHandler;
 import com.mrcrayfish.guns.common.NetworkGunManager;
-import com.mrcrayfish.guns.init.ModParticleTypes;
 import com.mrcrayfish.guns.particles.BulletHoleData;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.Particle;

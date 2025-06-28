@@ -116,7 +116,7 @@ public class ThrowableSmokeGrenadeEntity extends ThrowableGrenadeEntity
         double radius = GrenadesConfig.COMMON.smokeGrenadeCloudDiameter.get() * 0.5;
         double duration = ((GrenadesConfig.COMMON.smokeGrenadeCloudDuration.get() - 3) * 20);
         @NotNull SimpleParticleType particle = ModParticleTypes.SMOKE_EFFECT.get();
-        Minecraft.getInstance().getSoundManager().play(new SmokeGrenadeExplosionSound(ModSounds.SMOKE_GRENADE_EXPLOSION.getId(), SoundSource.BLOCKS, (float)this.getX(),(float)y, (float)this.getZ(), 1, pitch, this.level.getRandom()));
+        Minecraft.getInstance().getSoundManager().play(new SmokeGrenadeExplosionSound(ModSounds.SMOKE_GRENADE_EXPLOSION.getId(), SoundSource.BLOCKS, (float)this.getX(),(float)y, (float)this.getZ(), 1, 1, this.level.getRandom()));
         if(!this.level.isClientSide)
         {
             SmokeCloud cloudLow = new SmokeCloud(this.level, this.getX(), this.getY()-0.5, this.getZ(), particle, (float) radius, (int) duration);

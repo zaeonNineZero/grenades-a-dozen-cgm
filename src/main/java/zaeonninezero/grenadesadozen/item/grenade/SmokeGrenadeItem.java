@@ -1,8 +1,8 @@
 package zaeonninezero.grenadesadozen.item.grenade;
 
-import com.mrcrayfish.guns.entity.ThrowableGrenadeEntity;
 import zaeonninezero.grenadesadozen.GrenadesConfig;
 import zaeonninezero.grenadesadozen.entity.grenade.ThrowableSmokeGrenadeEntity;
+import com.mrcrayfish.guns.entity.ThrowableGrenadeEntity;
 import com.mrcrayfish.guns.item.GrenadeItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
