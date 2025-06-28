@@ -1,7 +1,7 @@
 package zaeonninezero.grenadesadozen.item.grenade;
 
-import com.mrcrayfish.guns.Config;
 import com.mrcrayfish.guns.entity.ThrowableGrenadeEntity;
+import zaeonninezero.grenadesadozen.GrenadesConfig;
 import zaeonninezero.grenadesadozen.entity.grenade.ThrowableSmokeGrenadeEntity;
 import com.mrcrayfish.guns.item.GrenadeItem;
 import net.minecraft.ChatFormatting;
@@ -26,14 +26,14 @@ public class SmokeGrenadeItem extends GrenadeItem
         super(properties, maxCookTime);
     }
 
-    @Override
+    /*@Override
     public void appendHoverText(@NotNull ItemStack stack, @Nullable Level worldIn, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag)
     {
         double damage = 0;//Config.COMMON.smokeGrenadeDamage.get();
-        double smokeDuration = ;//Config.COMMON.smokeGrenadeCloudDuration.get();
-        double smokeDiameter = ;//Config.COMMON.smokeGrenadeCloudDiameter.get();
+        double smokeDuration = GrenadesConfig.COMMON.smokeGrenadeCloudDuration.get();
+        double smokeDiameter = GrenadesConfig.COMMON.smokeGrenadeCloudDiameter.get();
         float cookTime = (float) maxCookTime / 20;
-        if(Screen.hasControlDown())
+        /*if(Screen.hasControlDown())
         {
             tooltip.add(Component.translatable("info.cgm.stats").withStyle(ChatFormatting.GOLD));
             tooltip.add(Component.translatable("info.cgm.damage_tick", ChatFormatting.WHITE + ItemStack.ATTRIBUTE_MODIFIER_FORMAT.format(damage)).withStyle(ChatFormatting.GRAY));
@@ -46,7 +46,7 @@ public class SmokeGrenadeItem extends GrenadeItem
         {
             tooltip.add(Component.translatable("info.cgm.stats_help").withStyle(ChatFormatting.GOLD));
         }
-    }
+    }*/
 
     @Override
     public ThrowableGrenadeEntity create(Level world, LivingEntity entity, int timeLeft)

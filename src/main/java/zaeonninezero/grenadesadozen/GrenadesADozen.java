@@ -3,8 +3,6 @@ package zaeonninezero.grenadesadozen;
 import zaeonninezero.grenadesadozen.init.*;
 //import zaeonninezero.grenadesadozen.client.ClientHandler;
 
-import com.mrcrayfish.guns.client.CustomGunManager;
-
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -18,12 +16,12 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod("grenadesadozen")
 public class GrenadesADozen {
 	public static final String MOD_ID = "grenadesadozen";
-    /*public static final CreativeModeTab GROUP = new CreativeModeTab(MOD_ID)
+    public static final CreativeModeTab GROUP = new CreativeModeTab(MOD_ID)
     {
         @Override
         public ItemStack makeIcon()
         {
-            ItemStack stack = new ItemStack(initItems.COMBAT_PISTOL.get());
+            ItemStack stack = new ItemStack(ModItems.SMOKE_GRENADE.get());
             return stack;
         }
 
@@ -31,9 +29,8 @@ public class GrenadesADozen {
         public void fillItemList(NonNullList<ItemStack> items)
         {
             super.fillItemList(items);
-            CustomGunManager.fill(items);
         }
-    };*/
+    };
 	
 	public GrenadesADozen() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -43,8 +40,10 @@ public class GrenadesADozen {
 		
 		//Registers all of the Deferred Registers from the init classes.
 		ModEffects.EFFECTS.register(bus);
-		//initItems.ITEMS.register(bus);
-		//initSounds.SOUNDS.register(bus);
+		ModEntities.ENTITIES.register(bus);
+		ModItems.ITEMS.register(bus);
+		ModParticleTypes.PARTICLES.register(bus);
+		ModSounds.SOUNDS.register(bus);
 		
 		//bus.addListener(this::onClientSetup);
 	}
