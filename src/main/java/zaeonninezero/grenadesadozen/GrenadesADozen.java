@@ -1,7 +1,7 @@
 package zaeonninezero.grenadesadozen;
 
-import zaeonninezero.grenadesadozen.init.*;
-import zaeonninezero.grenadesadozen.client.ClientHandler;
+//import zaeonninezero.grenadesadozen.init.*;
+//import zaeonninezero.grenadesadozen.client.ClientHandler;
 
 import com.mrcrayfish.guns.client.CustomGunManager;
 
@@ -43,10 +43,10 @@ public class GrenadesADozen {
 		MinecraftForge.EVENT_BUS.register(this);
 		
 		//Registers all of the Deferred Registers from the init classes.
-		initItems.ITEMS.register(bus);
-		initSounds.SOUNDS.register(bus);
+		//initItems.ITEMS.register(bus);
+		//initSounds.SOUNDS.register(bus);
 		
-		bus.addListener(this::onClientSetup);
+		//bus.addListener(this::onClientSetup);
 	}
 	
 	//Common setup
@@ -55,7 +55,7 @@ public class GrenadesADozen {
 	}
 	
 	//Client setup
-	private void onClientSetup(FMLClientSetupEvent event) {
+	/*private void onClientSetup(FMLClientSetupEvent event) {
 		event.enqueueWork(ClientHandler::setup);
-	}
+	}*/
 }
