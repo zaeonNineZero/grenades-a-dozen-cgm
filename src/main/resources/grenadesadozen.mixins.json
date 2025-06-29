@@ -1,0 +1,14 @@
+{
+    "required": true,
+    "package": "zaeonninezero.grenadesadozen.mixin",
+    "compatibilityLevel": "JAVA_8",
+    "minVersion": "0.8",
+    "refmap": "grenadesadozen.refmap.json",
+    "plugin": "com.mrcrayfish.guns.mixin.MixinPlugin",
+    "client": [
+        "client.GameRendererMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

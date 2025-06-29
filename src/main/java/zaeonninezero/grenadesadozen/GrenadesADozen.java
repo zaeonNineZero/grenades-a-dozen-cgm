@@ -1,14 +1,17 @@
 package zaeonninezero.grenadesadozen;
 
+import zaeonninezero.grenadesadozen.client.ClientHandler;
 import zaeonninezero.grenadesadozen.init.*;
-//import zaeonninezero.grenadesadozen.client.ClientHandler;
+import zaeonninezero.grenadesadozen.network.GrenadePacketHandler;
 
-import com.mrcrayfish.guns.Config;
+import com.mrcrayfish.framework.api.FrameworkAPI;
 
 import net.minecraft.core.NonNullList;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -49,18 +52,22 @@ public class GrenadesADozen {
 		ModSounds.SOUNDS.register(bus);
 
 		bus.addListener(this::setup);
-		//bus.addListener(this::onClientSetup);
+		bus.addListener(this::onClientSetup);
 		MinecraftForge.EVENT_BUS.register(this);
 		
 	}
 	
 	//Common setup
 	private void setup(final FMLCommonSetupEvent event) {
-		System.out.println("Grenades a Dozen pre-initialized.");
+		event.enqueueWork(() ->
+        {
+            GrenadePacketHandler.init();
+        });
+		//System.out.println("Grenades a Dozen pre-initialized.");
 	}
 	
 	//Client setup
 	private void onClientSetup(FMLClientSetupEvent event) {
-		//event.enqueueWork(ClientHandler::setup);
+		event.enqueueWork(ClientHandler::setup);
 	}
 }

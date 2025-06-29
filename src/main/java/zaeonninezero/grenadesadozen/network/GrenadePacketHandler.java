@@ -22,7 +22,7 @@ public class GrenadePacketHandler
     }
 
     /**
-     * Gets the play network channel for MrCrayfish's Gun Mod
+     * Gets the play network channel for Grenades a Dozen
      */
     public static FrameworkNetwork getPlayChannel()
     {

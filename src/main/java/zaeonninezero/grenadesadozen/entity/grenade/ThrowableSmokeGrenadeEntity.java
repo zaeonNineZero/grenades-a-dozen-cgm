@@ -8,6 +8,7 @@ import zaeonninezero.grenadesadozen.init.ModEntities;
 import zaeonninezero.grenadesadozen.init.ModItems;
 import zaeonninezero.grenadesadozen.init.ModParticleTypes;
 import zaeonninezero.grenadesadozen.init.ModSounds;
+import zaeonninezero.grenadesadozen.network.GrenadePacketHandler;
 import zaeonninezero.grenadesadozen.network.message.S2CMessageSmokeGrenade;
 import com.mrcrayfish.guns.entity.ThrowableGrenadeEntity;
 import com.mrcrayfish.guns.network.PacketHandler;
@@ -23,11 +24,14 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.HitResult;
+import net.minecraftforge.fml.common.Mod;
+
 import org.jetbrains.annotations.NotNull;
 
 /**
  * Author: MrCrayfish
  */
+@Mod.EventBusSubscriber
 public class ThrowableSmokeGrenadeEntity extends ThrowableGrenadeEntity
 {
     public ThrowableSmokeGrenadeEntity(EntityType<? extends ThrowableGrenadeEntity> entityType, Level world)
@@ -119,15 +123,15 @@ public class ThrowableSmokeGrenadeEntity extends ThrowableGrenadeEntity
         Minecraft.getInstance().getSoundManager().play(new SmokeGrenadeExplosionSound(ModSounds.SMOKE_GRENADE_EXPLOSION.getId(), SoundSource.BLOCKS, (float)this.getX(),(float)y, (float)this.getZ(), 1, 1, this.level.getRandom()));
         if(!this.level.isClientSide)
         {
-            SmokeCloud cloudLow = new SmokeCloud(this.level, this.getX(), this.getY()-0.5, this.getZ(), particle, (float) radius, (int) duration);
+            SmokeCloud cloudLow = new SmokeCloud(this.level, this.getX(), this.getY()-0.2, this.getZ(), particle, (float) radius, (int) duration);
             this.level.addFreshEntity(cloudLow);
 
-            SmokeCloud cloudMid = new SmokeCloud(this.level, this.getX(), this.getY()+0.5, this.getZ(), particle, (float) radius, (int) duration);
+            SmokeCloud cloudMid = new SmokeCloud(this.level, this.getX(), this.getY()+0.8, this.getZ(), particle, (float) radius, (int) duration);
             this.level.addFreshEntity(cloudMid);
 
-            SmokeCloud cloudHigh = new SmokeCloud(this.level, this.getX(), this.getY()+1.5, this.getZ(), particle, (float) radius, (int) duration);
+            SmokeCloud cloudHigh = new SmokeCloud(this.level, this.getX(), this.getY()+1.8, this.getZ(), particle, (float) radius, (int) duration);
             this.level.addFreshEntity(cloudHigh);
         }
-        PacketHandler.getPlayChannel().sendToNearbyPlayers(() -> LevelLocation.create(this.level, this.getX(), y, this.getZ(), 256), new S2CMessageSmokeGrenade(this.getX(), y, this.getZ()));
+        GrenadePacketHandler.getPlayChannel().sendToNearbyPlayers(() -> LevelLocation.create(this.level, this.getX(), y, this.getZ(), 256), new S2CMessageSmokeGrenade(this.getX(), y, this.getZ()));
     }
 }

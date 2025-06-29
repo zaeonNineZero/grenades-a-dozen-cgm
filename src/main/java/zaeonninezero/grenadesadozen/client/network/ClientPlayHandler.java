@@ -102,7 +102,7 @@ public class ClientPlayHandler
             level.addAlwaysVisibleParticle(ModParticleTypes.SMOKE_CLOUD.get(),
                     true,
                     x+((Math.random()-0.5) * diameter),
-                    y+(Math.random() * (diameter * 0.5)),
+                    y+0.1+(Math.random() * (diameter * 0.65)),
                     z+((Math.random()-0.5) * diameter),
                     (Math.random()-0.5) * vel,
                     Math.random() * (vel * 0.5),
