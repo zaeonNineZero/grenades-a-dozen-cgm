@@ -4,7 +4,7 @@
     "compatibilityLevel": "JAVA_8",
     "minVersion": "0.8",
     "refmap": "grenadesadozen.refmap.json",
-    "plugin": "com.mrcrayfish.guns.mixin.MixinPlugin",
+    "plugin": "zaeonninezero.grenadesadozen.mixin.MixinPlugin",
     "client": [
         "client.GameRendererMixin"
     ],

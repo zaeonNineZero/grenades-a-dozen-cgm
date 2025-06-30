@@ -1,4 +1,4 @@
-package zaeonninezero.grenadesadozen.guns.mixin;
+package zaeonninezero.grenadesadozen.mixin;
 
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
