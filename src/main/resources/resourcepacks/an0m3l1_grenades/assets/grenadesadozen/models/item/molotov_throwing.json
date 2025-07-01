@@ -1,0 +1,15 @@
+{
+    "parent": "grenadesadozen:item/molotov",
+	"display": {
+		"firstperson_righthand": {
+			"rotation": [-160, -30, 170],
+			"translation": [6, 5.0, -3],
+			"scale": [0.6, 0.6, 0.6]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-160, -30, 170],
+			"translation": [6, 5.0, -3],
+			"scale": [0.6, 0.6, 0.6]
+		}
+	}
+}

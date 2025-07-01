@@ -70,4 +70,9 @@ public class GrenadesADozen {
 	private void onClientSetup(FMLClientSetupEvent event) {
 		event.enqueueWork(ClientHandler::setup);
 	}
+
+	//Needed to support loading embedded resource packs
+	public static ResourceLocation asResource(String path) {
+		return new ResourceLocation(MOD_ID, path);
+	}
 }
