@@ -14,9 +14,8 @@ public class GrenadePacketHandler
     public static void init()
     {
         playChannel = FrameworkAPI.createNetworkBuilder(new ResourceLocation(GrenadesADozen.MOD_ID, "play"), 1)
-                //.registerPlayMessage(S2CMessageIncendiaryGrenade.class, MessageDirection.PLAY_CLIENT_BOUND)
-                //.registerPlayMessage(S2CMessageMolotov.class, MessageDirection.PLAY_CLIENT_BOUND)
-                //.registerPlayMessage(S2CMessageStunGrenade.class, MessageDirection.PLAY_CLIENT_BOUND)
+                .registerPlayMessage(S2CMessageIncendiaryGrenade.class, MessageDirection.PLAY_CLIENT_BOUND)
+                .registerPlayMessage(S2CMessageMolotov.class, MessageDirection.PLAY_CLIENT_BOUND)
                 .registerPlayMessage(S2CMessageSmokeGrenade.class, MessageDirection.PLAY_CLIENT_BOUND)
                 .build();
     }

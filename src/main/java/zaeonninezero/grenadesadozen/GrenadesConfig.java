@@ -1,11 +1,7 @@
 package zaeonninezero.grenadesadozen;
 
-import com.mrcrayfish.guns.client.screen.ButtonAlignment;
 import net.minecraftforge.common.ForgeConfigSpec;
 import org.apache.commons.lang3.tuple.Pair;
-
-import java.util.Collections;
-import java.util.List;
 
 public class GrenadesConfig
 {
@@ -24,6 +20,9 @@ public class GrenadesConfig
         public final ForgeConfigSpec.DoubleValue heGrenadeDamage;
         public final ForgeConfigSpec.DoubleValue heGrenadeExplosionRadius;
         public final ForgeConfigSpec.BooleanValue heGrenadeGriefing;
+        public final ForgeConfigSpec.DoubleValue impactGrenadeDamage;
+        public final ForgeConfigSpec.DoubleValue impactGrenadeExplosionRadius;
+        public final ForgeConfigSpec.BooleanValue impactGrenadeGriefing;
         public final ForgeConfigSpec.DoubleValue smokeGrenadeCloudDiameter;
         //public final ForgeConfigSpec.DoubleValue smokeGrenadeDamage;
         public final ForgeConfigSpec.DoubleValue smokeGrenadeCloudDuration;
@@ -39,6 +38,11 @@ public class GrenadesConfig
         		this.heGrenadeDamage = builder.comment("The maximum damage dealt by thrown high explosive grenades. This only works when CGM Expanded is installed -- otherwise damage is scaled to explosion radius!").defineInRange("heGrenadeDamage", 24.0, 0.0, Double.MAX_VALUE);
         		this.heGrenadeExplosionRadius = builder.comment("The explosion radius of high explosive grenades. This determines the power of the explosion on blocks, and the maximum range at which damage can be dealt.").defineInRange("heGrenadeExplosionRadius", 5.4, 0.0, Double.MAX_VALUE);
                 this.heGrenadeGriefing = builder.comment("If enabled, high explosive grenades can destroy blocks. Note that high explosive grenades will always destroy blocks if grenade griefing is enabled in CGM's config!").define("heGrenadeGriefing", true);
+            }builder.pop();
+            builder.push("impact_grenade");{
+                this.impactGrenadeDamage = builder.comment("The maximum damage dealt by thrown impact grenades. This only works when CGM Expanded is installed -- otherwise damage is scaled to explosion radius!").defineInRange("impactGrenadeDamage", 18.0, 0.0, Double.MAX_VALUE);
+                this.impactGrenadeExplosionRadius = builder.comment("The explosion radius of impact grenades. This determines the power of the explosion on blocks, and the maximum range at which damage can be dealt.").defineInRange("impactGrenadeExplosionRadius", 4.6, 0.0, Double.MAX_VALUE);
+                this.impactGrenadeGriefing = builder.comment("If enabled, impact grenades can destroy blocks. Note that impact grenades will always destroy blocks if grenade griefing is enabled in CGM's config!").define("impactGrenadeGriefing", false);
             }builder.pop();
             builder.push("smoke_grenade");{
                 this.smokeGrenadeCloudDiameter = builder.comment("The diameter of Smoke Grenade's smoke cloud. Caution: high diameter values will spawn more particles and cause lag.").defineInRange("smokeGrenadeCloudDiameter", 5.0, 0.0, Double.MAX_VALUE);

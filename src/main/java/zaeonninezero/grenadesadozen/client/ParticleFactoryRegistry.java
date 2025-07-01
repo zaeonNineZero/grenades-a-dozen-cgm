@@ -20,6 +20,7 @@ public class ParticleFactoryRegistry
     public static void onRegisterParticleFactory(RegisterParticleProvidersEvent event)
     {
         ParticleEngine particleManager = Minecraft.getInstance().particleEngine;
+        particleManager.register(ModParticleTypes.EXPLOSION.get(), ExplosionParticle.Factory::new);
         particleManager.register(ModParticleTypes.SMOKE_CLOUD.get(), SmokeCloudParticle.Factory::new);
         particleManager.register(ModParticleTypes.SMOKE_EFFECT.get(), SmokeEffectParticle.Factory::new);
     }

@@ -1,37 +1,16 @@
 package zaeonninezero.grenadesadozen.client.network;
 
+import net.minecraft.core.particles.ParticleOptions;
 import zaeonninezero.grenadesadozen.GrenadesConfig;
 import zaeonninezero.grenadesadozen.network.message.*;
 import zaeonninezero.grenadesadozen.init.ModParticleTypes;
-import com.mrcrayfish.guns.Config;
-import com.mrcrayfish.guns.client.BulletTrail;
-import com.mrcrayfish.guns.client.CustomGunManager;
-import com.mrcrayfish.guns.client.audio.GunShotSound;
-import com.mrcrayfish.guns.client.handler.BulletTrailRenderingHandler;
-import com.mrcrayfish.guns.client.handler.GunRenderingHandler;
-import com.mrcrayfish.guns.common.NetworkGunManager;
-import com.mrcrayfish.guns.particles.BulletHoleData;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleEngine;
-import net.minecraft.client.resources.sounds.SimpleSoundInstance;
-import net.minecraft.client.resources.sounds.SoundInstance;
-import net.minecraft.core.Vec3i;
-import net.minecraft.core.particles.BlockParticleOption;
-import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.registries.ForgeRegistries;
 
-import javax.annotation.Nullable;
 import java.util.*;
 
 /**
@@ -39,12 +18,12 @@ import java.util.*;
  */
 public class ClientPlayHandler
 {
-    /*public static void handleExplosionIncendiaryGrenade(S2CMessageIncendiaryGrenade message)
+    public static void handleExplosionIncendiaryGrenade(S2CMessageIncendiaryGrenade message)
     {
         Minecraft mc = Minecraft.getInstance();
         ParticleEngine particleManager = mc.particleEngine;
         Level world = Objects.requireNonNull(mc.level);
-        float size = Config.COMMON.incendiaryGrenadeExplosionRadius.get().floatValue() * 2.0F;
+        float size = GrenadesConfig.COMMON.incendiaryGrenadeExplosionRadius.get().floatValue() * 2.0F;
         double x = message.getX();
         double y = message.getY();
         double z = message.getZ();
@@ -67,7 +46,7 @@ public class ClientPlayHandler
         Minecraft mc = Minecraft.getInstance();
         ParticleEngine particleManager = mc.particleEngine;
         Level world = Objects.requireNonNull(mc.level);
-        float size = Config.COMMON.molotovExplosionRadius.get().floatValue() * 2.0F;
+        float size = GrenadesConfig.COMMON.molotovExplosionRadius.get().floatValue() * 2.0F;
         double x = message.getX();
         double y = message.getY();
         double z = message.getZ();
@@ -83,7 +62,7 @@ public class ClientPlayHandler
             flame.setLifetime((int) ((8 / (Math.random() * 0.1 + 0.6)) * 0.5));
             flame.scale(3f);
         }
-    }*/
+    }
 
     public static void handleExplosionSmokeGrenade(S2CMessageSmokeGrenade message)
     {

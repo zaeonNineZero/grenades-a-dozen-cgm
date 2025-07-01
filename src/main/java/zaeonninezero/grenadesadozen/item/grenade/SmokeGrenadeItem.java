@@ -1,24 +1,11 @@
 package zaeonninezero.grenadesadozen.item.grenade;
 
-import zaeonninezero.grenadesadozen.GrenadesConfig;
 import zaeonninezero.grenadesadozen.entity.grenade.ThrowableSmokeGrenadeEntity;
 import com.mrcrayfish.guns.entity.ThrowableGrenadeEntity;
 import com.mrcrayfish.guns.item.GrenadeItem;
-import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.NotNull;
 
-import javax.annotation.Nullable;
-import java.util.List;
-
-/**
- * Author: MrCrayfish
- */
 public class SmokeGrenadeItem extends GrenadeItem
 {
     public SmokeGrenadeItem(Properties properties, int maxCookTime)
