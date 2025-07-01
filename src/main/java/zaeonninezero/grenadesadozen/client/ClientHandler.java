@@ -27,10 +27,27 @@ public class ClientHandler
     
     private static void registerItemProperties()
     {
+    	// TODO: Make certain item properties only be registered when CGM Expanded is installed
+    	
     	ItemProperties.register(ModItems.SMOKE_GRENADE.get(), 
     		new ResourceLocation("throwing"), (stack, level, living, id) -> {
     			return living != null && living.isUsingItem() && living.getUseItem() == stack ? 1.0F : 0.0F;
     		}
     	);
+    	ItemProperties.register(ModItems.INCENDIARY_GRENADE.get(), 
+        	new ResourceLocation("throwing"), (stack, level, living, id) -> {
+        		return living != null && living.isUsingItem() && living.getUseItem() == stack ? 1.0F : 0.0F;
+        	}
+        );
+    	ItemProperties.register(ModItems.MOLOTOV.get(), 
+        	new ResourceLocation("throwing"), (stack, level, living, id) -> {
+        		return living != null && living.isUsingItem() && living.getUseItem() == stack ? 1.0F : 0.0F;
+        	}
+        );
+    	ItemProperties.register(ModItems.IMPACT_GRENADE.get(), 
+        	new ResourceLocation("throwing"), (stack, level, living, id) -> {
+        		return living != null && living.isUsingItem() && living.getUseItem() == stack ? 1.0F : 0.0F;
+        	}
+        );
     }
 }
