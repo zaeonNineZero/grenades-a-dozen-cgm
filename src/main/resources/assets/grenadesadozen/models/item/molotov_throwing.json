@@ -2,12 +2,14 @@
     "parent": "grenadesadozen:item/molotov",
 	"display": {
 		"firstperson_righthand": {
-			"rotation": [30, 225, 0],
-			"translation": [5.75, 5, -7]
+			"rotation": [-160, -30, 170],
+			"translation": [6, 5.0, -3],
+			"scale": [0.6, 0.6, 0.6]
 		},
 		"firstperson_lefthand": {
-			"rotation": [30, 45, 0],
-			"translation": [5.75, 5, -7]
+			"rotation": [-160, -30, 170],
+			"translation": [6, 5.0, -3],
+			"scale": [0.6, 0.6, 0.6]
 		}
 	}
 }
