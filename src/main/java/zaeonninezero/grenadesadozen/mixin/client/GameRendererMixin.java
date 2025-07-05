@@ -33,7 +33,7 @@ public class GameRendererMixin
         {
             Window window = Minecraft.getInstance().getWindow();
             float percent = Math.min((smokeEffect.getDuration() / (float) Config.SERVER.alphaFadeThreshold.get()), 1);
-            GuiComponent.fill(new PoseStack(), 0, 0, window.getScreenWidth(), window.getScreenHeight(), ((int) (percent * 248 + 0.5) << 24) | 8156784);
+            GuiComponent.fill(new PoseStack(), 0, 0, window.getScreenWidth(), window.getScreenHeight(), ((int) (percent * 246 + 0.5) << 24) | 8156784);
         }
     }
 }

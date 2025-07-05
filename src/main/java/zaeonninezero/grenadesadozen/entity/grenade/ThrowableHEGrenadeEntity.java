@@ -13,31 +13,32 @@ import zaeonninezero.grenadesadozen.init.ModEntities;
 import zaeonninezero.grenadesadozen.init.ModItems;
 import zaeonninezero.grenadesadozen.util.CGMExpandedHelper;
 
-public class ThrowableImpactGrenadeEntity extends ThrowableGrenadeEntity
+public class ThrowableHEGrenadeEntity extends ThrowableGrenadeEntity
 {
-    protected float radius = GrenadesConfig.COMMON.impactGrenadeExplosionRadius.get().floatValue();
-    protected float damage = GrenadesConfig.COMMON.impactGrenadeDamage.get().floatValue();
-    protected boolean griefing = GrenadesConfig.COMMON.impactGrenadeGriefing.get();
+    protected float radius = GrenadesConfig.COMMON.heGrenadeExplosionRadius.get().floatValue();
+    protected float damage = GrenadesConfig.COMMON.heGrenadeDamage.get().floatValue();
+    protected boolean griefing = GrenadesConfig.COMMON.heGrenadeGriefing.get();
     protected boolean globalGriefing = Config.COMMON.gameplay.griefing.enableBlockRemovalOnExplosions.get();
 
-    public ThrowableImpactGrenadeEntity(EntityType<? extends ThrowableItemEntity> entityType, Level worldIn)
+    public ThrowableHEGrenadeEntity(EntityType<? extends ThrowableItemEntity> entityType, Level worldIn)
     {
         super(entityType, worldIn);
     }
 
-    public ThrowableImpactGrenadeEntity(EntityType<? extends ThrowableItemEntity> entityType, Level world, LivingEntity entity)
+    public ThrowableHEGrenadeEntity(EntityType<? extends ThrowableItemEntity> entityType, Level world, LivingEntity entity)
     {
         super(entityType, world, entity);
-        this.setItem(new ItemStack(ModItems.IMPACT_GRENADE.get()));
-        this.setShouldBounce(false);
+        this.setItem(new ItemStack(ModItems.HE_GRENADE.get()));
+        this.setShouldBounce(true);
+        this.setMaxLife(20 * 4);
     }
 
-    public ThrowableImpactGrenadeEntity(Level world, LivingEntity entity, int timeLeft)
+    public ThrowableHEGrenadeEntity(Level world, LivingEntity entity, int timeLeft)
     {
-        super(ModEntities.THROWABLE_IMPACT_GRENADE.get(), world, entity);
-        this.setItem(new ItemStack(ModItems.IMPACT_GRENADE.get()));
-        this.setMaxLife(200);
-        this.setShouldBounce(false);
+        super(ModEntities.THROWABLE_HE_GRENADE.get(), world, entity);
+        this.setItem(new ItemStack(ModItems.HE_GRENADE.get()));
+        this.setMaxLife(timeLeft);
+        this.setShouldBounce(true);
     }
 
     @Override
