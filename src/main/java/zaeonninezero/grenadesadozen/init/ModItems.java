@@ -12,7 +12,7 @@ public class ModItems
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, GrenadesADozen.MOD_ID);
 
    /* Grenades */
-    public static final RegistryObject<Item> HE_GRENADE = ITEMS.register("he_grenade", () -> new HEGrenadeItem(new Item.Properties(), 20 * 3));
+    public static final RegistryObject<Item> HE_GRENADE = ITEMS.register("he_grenade", () -> new HEGrenadeItem(new Item.Properties(), 20 * 4));
     public static final RegistryObject<Item> SMOKE_GRENADE = ITEMS.register("smoke_grenade", () -> new SmokeGrenadeItem(new Item.Properties(), 20 * 5));
     public static final RegistryObject<Item> INCENDIARY_GRENADE = ITEMS.register("incendiary_grenade", () -> new IncendiaryGrenadeItem(new Item.Properties(), 20 * 3));
     public static final RegistryObject<Item> MOLOTOV = ITEMS.register("molotov", () -> new MolotovItem(new Item.Properties(), 20 * 10));
