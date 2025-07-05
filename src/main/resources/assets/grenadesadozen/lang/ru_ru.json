@@ -1,19 +1,21 @@
 {
 	"itemGroup.grenadesadozen": "Grenades a Dozen",
 
-	"item.grenadesadozen.smoke_grenade": "Дымовая граната",
+	"item.grenadesadozen.he_grenade": "Фугасная граната",
 	"item.grenadesadozen.impact_grenade": "Ударная граната",
 	"item.grenadesadozen.incendiary_grenade": "Зажигательная граната",
 	"item.grenadesadozen.molotov": "Молотов",
+	"item.grenadesadozen.smoke_grenade": "Дымовая граната",
 
 	"effect.grenadesadozen.smoked": "Задымлен",
 
-	"entity.grenadesadozen.throwable_smoke_grenade": "Дымовая граната",
+	"entity.grenadesadozen.throwable_he_grenade": "Фугасная граната",
 	"entity.grenadesadozen.throwable_impact_grenade": "Ударная граната",
 	"entity.grenadesadozen.throwable_incendiary_grenade": "Зажигательная граната",
 	"entity.grenadesadozen.throwable_molotov": "Молотов",
+	"entity.grenadesadozen.throwable_smoke_grenade": "Дымовая граната",
 
-	"subtitle.grenadesadozen.smoke_grenade_explodes": "Взрыв дымовой гранаты",
 	"subtitle.grenadesadozen.incendiary_grenade_explodes": "Взрыв зажигательной гранаты",
-	"subtitle.grenadesadozen.molotov_explodes": "Взрыв молотова"
+	"subtitle.grenadesadozen.molotov_explodes": "Взрыв молотова",
+	"subtitle.grenadesadozen.smoke_grenade_explodes": "Взрыв дымовой гранаты"
 }
