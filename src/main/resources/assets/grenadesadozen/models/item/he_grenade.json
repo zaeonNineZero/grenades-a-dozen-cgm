@@ -91,7 +91,7 @@
 			"name": "Handle Bottom",
 			"from": [7.5, 0.54332, 4.84332],
 			"to": [8.5, 4.34332, 5.84332],
-			"rotation": {"angle": 0, "axis": "x", "origin": [8.001, 2.09332, 5.34332]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [8.001, 2.09332, 5.34332]},
 			"faces": {
 				"north": {"uv": [10, 1, 11, 5], "texture": "#1"},
 				"east": {"uv": [10, 1, 11, 5], "texture": "#1"},
@@ -101,9 +101,9 @@
 			}
 		},
 		{
-			"from": [8, 3.5, 7],
-			"to": [9, 5.5, 9],
-			"rotation": {"angle": 45, "axis": "z", "origin": [9, 5.5, 8]},
+			"from": [8, 3.501, 7],
+			"to": [9, 5.501, 9],
+			"rotation": {"angle": 45, "axis": "z", "origin": [9, 5.501, 8]},
 			"faces": {
 				"east": {"uv": [11, 0, 14, 3], "texture": "#1"}
 			}
