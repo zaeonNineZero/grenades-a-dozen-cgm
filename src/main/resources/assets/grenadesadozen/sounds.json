@@ -1,4 +1,17 @@
 {
+  "item.molotov.light": {
+    "sounds": [
+      "grenadesadozen:item/molotov_light"
+    ]
+  },
+  "entity.molotov.break": {
+    "sounds": [
+      "random/glass1",
+      "random/glass2",
+      "random/glass3"
+    ]
+  },
+  
   "entity.smoke_grenade.explode": {
     "subtitle":"subtitle.grenadesadozen.smoke_grenade_explodes",
     "sounds": [

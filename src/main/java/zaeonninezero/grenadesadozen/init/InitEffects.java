@@ -12,7 +12,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 /**
  * Author: MrCrayfish
  */
-public class ModEffects
+public class InitEffects
 {
     public static final DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, GrenadesADozen.MOD_ID);
 

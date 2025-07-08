@@ -1,7 +1,7 @@
 package zaeonninezero.grenadesadozen.client;
 
 import zaeonninezero.grenadesadozen.GrenadesADozen;
-import zaeonninezero.grenadesadozen.init.ModEntities;
+import zaeonninezero.grenadesadozen.init.InitEntities;
 import com.mrcrayfish.guns.client.render.entity.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -17,10 +17,10 @@ public class GrenadeEntityRenderers
     @SubscribeEvent
     public static void registerEntityRenders(EntityRenderersEvent.RegisterRenderers event)
     {
-        event.registerEntityRenderer(ModEntities.THROWABLE_HE_GRENADE.get(), ThrowableGrenadeRenderer::new);
-        event.registerEntityRenderer(ModEntities.THROWABLE_SMOKE_GRENADE.get(), ThrowableGrenadeRenderer::new);
-        event.registerEntityRenderer(ModEntities.THROWABLE_INCENDIARY_GRENADE.get(), ThrowableGrenadeRenderer::new);
-        event.registerEntityRenderer(ModEntities.THROWABLE_MOLOTOV.get(), ThrowableGrenadeRenderer::new);
-        event.registerEntityRenderer(ModEntities.THROWABLE_IMPACT_GRENADE.get(), ThrowableGrenadeRenderer::new);
+        event.registerEntityRenderer(InitEntities.THROWABLE_HE_GRENADE.get(), ThrowableGrenadeRenderer::new);
+        event.registerEntityRenderer(InitEntities.THROWABLE_SMOKE_GRENADE.get(), ThrowableGrenadeRenderer::new);
+        event.registerEntityRenderer(InitEntities.THROWABLE_INCENDIARY_GRENADE.get(), ThrowableGrenadeRenderer::new);
+        event.registerEntityRenderer(InitEntities.THROWABLE_MOLOTOV.get(), ThrowableGrenadeRenderer::new);
+        event.registerEntityRenderer(InitEntities.THROWABLE_IMPACT_GRENADE.get(), ThrowableGrenadeRenderer::new);
     }
 }

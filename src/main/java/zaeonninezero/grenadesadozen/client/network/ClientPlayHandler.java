@@ -3,7 +3,7 @@ package zaeonninezero.grenadesadozen.client.network;
 import net.minecraft.core.particles.ParticleOptions;
 import zaeonninezero.grenadesadozen.GrenadesConfig;
 import zaeonninezero.grenadesadozen.network.message.*;
-import zaeonninezero.grenadesadozen.init.ModParticleTypes;
+import zaeonninezero.grenadesadozen.init.InitParticleTypes;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleEngine;
@@ -29,7 +29,7 @@ public class ClientPlayHandler
         double z = message.getZ();
 
         //Spawn explosion particle
-        Particle explosion = spawnParticle(particleManager, ModParticleTypes.EXPLOSION.get(), x, y, z, world.random, 0.0);
+        Particle explosion = spawnParticle(particleManager, InitParticleTypes.EXPLOSION.get(), x, y, z, world.random, 0.0);
         explosion.scale(size);
 
         //Spawn fast moving flame particles
@@ -52,7 +52,7 @@ public class ClientPlayHandler
         double z = message.getZ();
 
         //Spawn explosion particle
-        Particle explosion = spawnParticle(particleManager, ModParticleTypes.EXPLOSION.get(), x, y, z, world.random, 0.0);
+        Particle explosion = spawnParticle(particleManager, InitParticleTypes.EXPLOSION.get(), x, y, z, world.random, 0.0);
         explosion.scale(size);
 
         //Spawn fast moving flame particles
@@ -78,7 +78,7 @@ public class ClientPlayHandler
         /* Spawn smoke cloud */
         for(int i = 0; i < amount; i++)
         {
-            level.addAlwaysVisibleParticle(ModParticleTypes.SMOKE_CLOUD.get(),
+            level.addAlwaysVisibleParticle(InitParticleTypes.SMOKE_CLOUD.get(),
                     true,
                     x+((Math.random()-0.5) * diameter),
                     y+0.1+(Math.random() * (diameter * 0.65)),

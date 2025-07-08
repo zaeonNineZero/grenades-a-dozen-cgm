@@ -15,7 +15,8 @@
 	"entity.grenadesadozen.throwable_molotov": "Molotov",
 	"entity.grenadesadozen.throwable_smoke_grenade": "Smoke Grenade",
 
-	"subtitle.grenadesadozen.incendiary_grenade_explodes": "Incendiary Grenade explodes",
-	"subtitle.grenadesadozen.molotov_explodes": "Molotov explodes",
-	"subtitle.grenadesadozen.smoke_grenade_explodes": "Smoke Grenade explodes"
+	"subtitle.grenadesadozen.incendiary_grenade_explodes": "Incendiary Grenade Explodes",
+	"subtitle.grenadesadozen.molotov_light": "Molotov Lights",
+	"subtitle.grenadesadozen.molotov_explodes": "Molotov Explodes",
+	"subtitle.grenadesadozen.smoke_grenade_explodes": "Smoke Grenade Explodes"
 }

@@ -10,7 +10,7 @@ import net.minecraftforge.registries.RegistryObject;
 /**
  * Author: MrCrayfish
  */
-public class ModParticleTypes
+public class InitParticleTypes
 {
     public static final DeferredRegister<ParticleType<?>> PARTICLES = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, GrenadesADozen.MOD_ID);
     

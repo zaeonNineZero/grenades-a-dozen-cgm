@@ -12,9 +12,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import zaeonninezero.grenadesadozen.GrenadesConfig;
 import zaeonninezero.grenadesadozen.client.audio.IncendiaryGrenadeExplosionSound;
-import zaeonninezero.grenadesadozen.init.ModEntities;
-import zaeonninezero.grenadesadozen.init.ModItems;
-import zaeonninezero.grenadesadozen.init.ModSounds;
+import zaeonninezero.grenadesadozen.init.InitEntities;
+import zaeonninezero.grenadesadozen.init.InitItems;
+import zaeonninezero.grenadesadozen.init.InitSounds;
 import zaeonninezero.grenadesadozen.network.GrenadePacketHandler;
 import zaeonninezero.grenadesadozen.network.message.S2CMessageIncendiaryGrenade;
 import zaeonninezero.grenadesadozen.util.GrenadeHelper;
@@ -36,13 +36,13 @@ public class ThrowableIncendiaryGrenadeEntity extends ThrowableGrenadeEntity
     public ThrowableIncendiaryGrenadeEntity(EntityType<? extends ThrowableGrenadeEntity> entityType, Level world, LivingEntity player)
     {
         super(entityType, world, player);
-        this.setItem(new ItemStack(ModItems.INCENDIARY_GRENADE.get()));
+        this.setItem(new ItemStack(InitItems.INCENDIARY_GRENADE.get()));
     }
 
     public ThrowableIncendiaryGrenadeEntity(Level world, LivingEntity player, int timeLeft)
     {
-        super(ModEntities.THROWABLE_INCENDIARY_GRENADE.get(), world, player);
-        this.setItem(new ItemStack(ModItems.INCENDIARY_GRENADE.get()));
+        super(InitEntities.THROWABLE_INCENDIARY_GRENADE.get(), world, player);
+        this.setItem(new ItemStack(InitItems.INCENDIARY_GRENADE.get()));
         this.setMaxLife(timeLeft);
     }
 
@@ -64,7 +64,7 @@ public class ThrowableIncendiaryGrenadeEntity extends ThrowableGrenadeEntity
         double y = this.getY() + this.getType().getDimensions().height * 0.5;
         Vec3 center = new Vec3(this.getX(), y, this.getZ());
 
-        Minecraft.getInstance().getSoundManager().play(new IncendiaryGrenadeExplosionSound(ModSounds.INCENDIARY_GRENADE_EXPLOSION.getId(), SoundSource.BLOCKS, (float)this.getX(),(float)y, (float)this.getZ(), 1, pitch, this.level.getRandom()));
+        Minecraft.getInstance().getSoundManager().play(new IncendiaryGrenadeExplosionSound(InitSounds.INCENDIARY_GRENADE_EXPLOSION.getId(), SoundSource.BLOCKS, (float)this.getX(),(float)y, (float)this.getZ(), 1, pitch, this.level.getRandom()));
         if(this.level.isClientSide)
         {
             return;

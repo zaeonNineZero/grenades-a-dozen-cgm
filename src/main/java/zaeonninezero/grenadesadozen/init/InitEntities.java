@@ -15,7 +15,7 @@ import java.util.function.BiFunction;
 /**
  * Author: MrCrayfish
  */
-public class ModEntities
+public class InitEntities
 {
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, GrenadesADozen.MOD_ID);
 

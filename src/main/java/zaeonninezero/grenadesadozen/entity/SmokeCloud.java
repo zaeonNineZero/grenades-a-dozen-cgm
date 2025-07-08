@@ -1,6 +1,6 @@
 package zaeonninezero.grenadesadozen.entity;
 
-import zaeonninezero.grenadesadozen.init.ModEffects;
+import zaeonninezero.grenadesadozen.init.InitEffects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.sounds.SoundEvents;
@@ -23,7 +23,7 @@ public class SmokeCloud extends AreaEffectCloud
         this.setParticle(particle);
         this.setRadius(radius);
         this.setDuration(duration);
-        this.addEffect(new MobEffectInstance(ModEffects.SMOKED.get(), 65, 0, false, false, true));
+        this.addEffect(new MobEffectInstance(InitEffects.SMOKED.get(), 65, 0, false, false, true));
     }
 
     @Override

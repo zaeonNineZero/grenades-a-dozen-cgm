@@ -1,6 +1,6 @@
 package zaeonninezero.grenadesadozen.effect;
 
-import zaeonninezero.grenadesadozen.init.ModEffects;
+import zaeonninezero.grenadesadozen.init.InitEffects;
 import com.mrcrayfish.guns.effect.IncurableEffect;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -21,7 +21,7 @@ public class SmokedEffect extends IncurableEffect
 	public void applyEffectTick(LivingEntity entity, int amplifier)
     {
         double damage = 0;
-        if (!entity.getCommandSenderWorld().isClientSide && entity.hasEffect(ModEffects.SMOKED.get()))
+        if (!entity.getCommandSenderWorld().isClientSide && entity.hasEffect(InitEffects.SMOKED.get()))
         {
             if(entity.getHealth() > 1.0F && damage > 0.0)
             {

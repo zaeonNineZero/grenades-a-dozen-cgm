@@ -4,10 +4,10 @@ import com.mrcrayfish.framework.api.network.LevelLocation;
 import zaeonninezero.grenadesadozen.GrenadesConfig;
 import zaeonninezero.grenadesadozen.client.audio.SmokeGrenadeExplosionSound;
 import zaeonninezero.grenadesadozen.entity.SmokeCloud;
-import zaeonninezero.grenadesadozen.init.ModEntities;
-import zaeonninezero.grenadesadozen.init.ModItems;
-import zaeonninezero.grenadesadozen.init.ModParticleTypes;
-import zaeonninezero.grenadesadozen.init.ModSounds;
+import zaeonninezero.grenadesadozen.init.InitEntities;
+import zaeonninezero.grenadesadozen.init.InitItems;
+import zaeonninezero.grenadesadozen.init.InitParticleTypes;
+import zaeonninezero.grenadesadozen.init.InitSounds;
 import zaeonninezero.grenadesadozen.network.GrenadePacketHandler;
 import zaeonninezero.grenadesadozen.network.message.S2CMessageSmokeGrenade;
 import com.mrcrayfish.guns.entity.ThrowableGrenadeEntity;
@@ -42,13 +42,13 @@ public class ThrowableSmokeGrenadeEntity extends ThrowableGrenadeEntity
     public ThrowableSmokeGrenadeEntity(EntityType<? extends ThrowableGrenadeEntity> entityType, Level world, LivingEntity player)
     {
         super(entityType, world, player);
-        this.setItem(new ItemStack(ModItems.SMOKE_GRENADE.get()));
+        this.setItem(new ItemStack(InitItems.SMOKE_GRENADE.get()));
     }
 
     public ThrowableSmokeGrenadeEntity(Level world, LivingEntity player, int timeLeft)
     {
-        super(ModEntities.THROWABLE_SMOKE_GRENADE.get(), world, player);
-        this.setItem(new ItemStack(ModItems.SMOKE_GRENADE.get()));
+        super(InitEntities.THROWABLE_SMOKE_GRENADE.get(), world, player);
+        this.setItem(new ItemStack(InitItems.SMOKE_GRENADE.get()));
         this.setMaxLife(timeLeft);
     }
 
@@ -119,8 +119,8 @@ public class ThrowableSmokeGrenadeEntity extends ThrowableGrenadeEntity
         double y = this.getY() + this.getType().getDimensions().height * 0.5;
         double radius = GrenadesConfig.COMMON.smokeGrenadeCloudDiameter.get() * 0.5;
         double duration = ((GrenadesConfig.COMMON.smokeGrenadeCloudDuration.get() - 3) * 20);
-        @NotNull SimpleParticleType particle = ModParticleTypes.SMOKE_EFFECT.get();
-        Minecraft.getInstance().getSoundManager().play(new SmokeGrenadeExplosionSound(ModSounds.SMOKE_GRENADE_EXPLOSION.getId(), SoundSource.BLOCKS, (float)this.getX(),(float)y, (float)this.getZ(), 1, 1, this.level.getRandom()));
+        @NotNull SimpleParticleType particle = InitParticleTypes.SMOKE_EFFECT.get();
+        Minecraft.getInstance().getSoundManager().play(new SmokeGrenadeExplosionSound(InitSounds.SMOKE_GRENADE_EXPLOSION.getId(), SoundSource.BLOCKS, (float)this.getX(),(float)y, (float)this.getZ(), 1, 1, this.level.getRandom()));
         if(!this.level.isClientSide)
         {
             SmokeCloud cloudLow = new SmokeCloud(this.level, this.getX(), this.getY()-0.2, this.getZ(), particle, (float) radius, (int) duration);

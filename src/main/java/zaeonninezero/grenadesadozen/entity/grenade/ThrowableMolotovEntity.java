@@ -12,9 +12,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import zaeonninezero.grenadesadozen.GrenadesConfig;
 import zaeonninezero.grenadesadozen.client.audio.MolotovExplosionSound;
-import zaeonninezero.grenadesadozen.init.ModEntities;
-import zaeonninezero.grenadesadozen.init.ModItems;
-import zaeonninezero.grenadesadozen.init.ModSounds;
+import zaeonninezero.grenadesadozen.init.InitEntities;
+import zaeonninezero.grenadesadozen.init.InitItems;
+import zaeonninezero.grenadesadozen.init.InitSounds;
 import zaeonninezero.grenadesadozen.network.GrenadePacketHandler;
 import zaeonninezero.grenadesadozen.network.message.S2CMessageMolotov;
 import zaeonninezero.grenadesadozen.util.GrenadeHelper;
@@ -36,14 +36,14 @@ public class ThrowableMolotovEntity extends ThrowableGrenadeEntity
     public ThrowableMolotovEntity(EntityType<? extends ThrowableGrenadeEntity> entityType, Level world, LivingEntity player)
     {
         super(entityType, world, player);
-        this.setItem(new ItemStack(ModItems.MOLOTOV.get()));
+        this.setItem(new ItemStack(InitItems.MOLOTOV.get()));
         this.setShouldBounce(false);
     }
 
     public ThrowableMolotovEntity(Level world, LivingEntity player, int timeLeft)
     {
-        super(ModEntities.THROWABLE_MOLOTOV.get(), world, player);
-        this.setItem(new ItemStack(ModItems.MOLOTOV.get()));
+        super(InitEntities.THROWABLE_MOLOTOV.get(), world, player);
+        this.setItem(new ItemStack(InitItems.MOLOTOV.get()));
         this.setMaxLife(200);
         this.setShouldBounce(false);
     }
@@ -69,7 +69,12 @@ public class ThrowableMolotovEntity extends ThrowableGrenadeEntity
         double y = this.getY() + this.getType().getDimensions().height * 0.5;
         Vec3 center = new Vec3(this.getX(), y, this.getZ());
 
-        Minecraft.getInstance().getSoundManager().play(new MolotovExplosionSound(ModSounds.MOLOTOV_EXPLOSION.getId(), SoundSource.BLOCKS, (float)this.getX(),(float)y, (float)this.getZ(), 1, pitch, this.level.getRandom()));
+        Minecraft mc = Minecraft.getInstance();
+        // Molotov glass breaking
+        mc.getSoundManager().play(new MolotovExplosionSound(InitSounds.MOLOTOV_BREAK.getId(), SoundSource.BLOCKS, (float)this.getX(),(float)y, (float)this.getZ(), 1, pitch, this.level.getRandom()));
+        // Molotov fire blast
+        mc.getSoundManager().play(new MolotovExplosionSound(InitSounds.MOLOTOV_EXPLOSION.getId(), SoundSource.BLOCKS, (float)this.getX(),(float)y, (float)this.getZ(), 1, pitch, this.level.getRandom()));
+        
         if(this.level.isClientSide)
             return;
         GrenadePacketHandler.getPlayChannel().sendToNearbyPlayers(() ->

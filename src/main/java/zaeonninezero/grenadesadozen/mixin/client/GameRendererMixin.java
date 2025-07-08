@@ -3,7 +3,7 @@ package zaeonninezero.grenadesadozen.mixin.client;
 import com.mojang.blaze3d.platform.Window;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mrcrayfish.guns.Config;
-import zaeonninezero.grenadesadozen.init.ModEffects;
+import zaeonninezero.grenadesadozen.init.InitEffects;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiComponent;
 import net.minecraft.client.renderer.GameRenderer;
@@ -27,7 +27,7 @@ public class GameRendererMixin
             return;
         }
 
-        MobEffectInstance smokeEffect = player.getEffect(ModEffects.SMOKED.get());
+        MobEffectInstance smokeEffect = player.getEffect(InitEffects.SMOKED.get());
 
         if (smokeEffect != null)
         {

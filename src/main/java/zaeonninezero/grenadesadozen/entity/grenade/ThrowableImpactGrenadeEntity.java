@@ -9,8 +9,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import zaeonninezero.grenadesadozen.GrenadesConfig;
-import zaeonninezero.grenadesadozen.init.ModEntities;
-import zaeonninezero.grenadesadozen.init.ModItems;
+import zaeonninezero.grenadesadozen.init.InitEntities;
+import zaeonninezero.grenadesadozen.init.InitItems;
 import zaeonninezero.grenadesadozen.util.CGMExpandedHelper;
 
 public class ThrowableImpactGrenadeEntity extends ThrowableGrenadeEntity
@@ -28,14 +28,14 @@ public class ThrowableImpactGrenadeEntity extends ThrowableGrenadeEntity
     public ThrowableImpactGrenadeEntity(EntityType<? extends ThrowableItemEntity> entityType, Level world, LivingEntity entity)
     {
         super(entityType, world, entity);
-        this.setItem(new ItemStack(ModItems.IMPACT_GRENADE.get()));
+        this.setItem(new ItemStack(InitItems.IMPACT_GRENADE.get()));
         this.setShouldBounce(false);
     }
 
     public ThrowableImpactGrenadeEntity(Level world, LivingEntity entity, int timeLeft)
     {
-        super(ModEntities.THROWABLE_IMPACT_GRENADE.get(), world, entity);
-        this.setItem(new ItemStack(ModItems.IMPACT_GRENADE.get()));
+        super(InitEntities.THROWABLE_IMPACT_GRENADE.get(), world, entity);
+        this.setItem(new ItemStack(InitItems.IMPACT_GRENADE.get()));
         this.setMaxLife(200);
         this.setShouldBounce(false);
     }

@@ -1,9 +1,14 @@
 package zaeonninezero.grenadesadozen.item.grenade;
 
+import com.mrcrayfish.guns.entity.ThrowableGrenadeEntity;
 import com.mrcrayfish.guns.item.GrenadeItem;
+
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import zaeonninezero.grenadesadozen.entity.grenade.ThrowableMolotovEntity;
+import zaeonninezero.grenadesadozen.init.InitSounds;
+import zaeonninezero.grenadesadozen.util.CGMExpandedHelper;
 
 public class MolotovItem extends GrenadeItem
 {
@@ -42,5 +47,13 @@ public class MolotovItem extends GrenadeItem
     public ThrowableMolotovEntity create(Level world, LivingEntity entity, int timeLeft)
     {
         return new ThrowableMolotovEntity(world, entity, timeLeft);
+    }
+
+    @Override
+    protected void onThrown(Level world, ThrowableGrenadeEntity entity)
+    {
+		world.playSound(null, entity.getX(), entity.getY(), entity.getZ(), InitSounds.MOLOTOV_LIGHT.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
+    	/*if (CGMExpandedHelper.isExpandedInstalled())
+    		world.playSound(null, entity.getX(), entity.getY()+1, entity.getZ(), InitSounds.GRENADE_THROW.get(), SoundSource.PLAYERS, 1.0F, 1.0F);*/
     }
 }

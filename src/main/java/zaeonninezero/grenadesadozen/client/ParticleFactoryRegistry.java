@@ -2,7 +2,7 @@ package zaeonninezero.grenadesadozen.client;
 
 import zaeonninezero.grenadesadozen.GrenadesADozen;
 import zaeonninezero.grenadesadozen.client.particle.*;
-import zaeonninezero.grenadesadozen.init.ModParticleTypes;
+import zaeonninezero.grenadesadozen.init.InitParticleTypes;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.ParticleEngine;
 import net.minecraftforge.api.distmarker.Dist;
@@ -20,8 +20,8 @@ public class ParticleFactoryRegistry
     public static void onRegisterParticleFactory(RegisterParticleProvidersEvent event)
     {
         ParticleEngine particleManager = Minecraft.getInstance().particleEngine;
-        particleManager.register(ModParticleTypes.EXPLOSION.get(), ExplosionParticle.Factory::new);
-        particleManager.register(ModParticleTypes.SMOKE_CLOUD.get(), SmokeCloudParticle.Factory::new);
-        particleManager.register(ModParticleTypes.SMOKE_EFFECT.get(), SmokeEffectParticle.Factory::new);
+        particleManager.register(InitParticleTypes.EXPLOSION.get(), ExplosionParticle.Factory::new);
+        particleManager.register(InitParticleTypes.SMOKE_CLOUD.get(), SmokeCloudParticle.Factory::new);
+        particleManager.register(InitParticleTypes.SMOKE_EFFECT.get(), SmokeEffectParticle.Factory::new);
     }
 }

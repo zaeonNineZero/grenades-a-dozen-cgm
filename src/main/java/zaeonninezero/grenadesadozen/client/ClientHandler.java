@@ -1,7 +1,7 @@
 package zaeonninezero.grenadesadozen.client;
 
 import zaeonninezero.grenadesadozen.GrenadesADozen;
-import zaeonninezero.grenadesadozen.init.ModItems;
+import zaeonninezero.grenadesadozen.init.InitItems;
 import zaeonninezero.grenadesadozen.util.CGMExpandedHelper;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
@@ -25,27 +25,27 @@ public class ClientHandler
     {
     	if(CGMExpandedHelper.isExpandedInstalled())
     	{
-	    	ItemProperties.register(ModItems.HE_GRENADE.get(), 
+	    	ItemProperties.register(InitItems.HE_GRENADE.get(), 
 	    		new ResourceLocation("throwing"), (stack, level, living, id) -> {
 	    			return living != null && living.isUsingItem() && living.getUseItem() == stack ? 1.0F : 0.0F;
 	    		}
 	    	);
-	    	ItemProperties.register(ModItems.SMOKE_GRENADE.get(), 
+	    	ItemProperties.register(InitItems.SMOKE_GRENADE.get(), 
 	    		new ResourceLocation("throwing"), (stack, level, living, id) -> {
 	    			return living != null && living.isUsingItem() && living.getUseItem() == stack ? 1.0F : 0.0F;
 	    		}
 	    	);
-	    	ItemProperties.register(ModItems.INCENDIARY_GRENADE.get(), 
+	    	ItemProperties.register(InitItems.INCENDIARY_GRENADE.get(), 
 	        	new ResourceLocation("throwing"), (stack, level, living, id) -> {
 	        		return living != null && living.isUsingItem() && living.getUseItem() == stack ? 1.0F : 0.0F;
 	        	}
 	        );
-	    	ItemProperties.register(ModItems.MOLOTOV.get(), 
+	    	ItemProperties.register(InitItems.MOLOTOV.get(), 
 	        	new ResourceLocation("throwing"), (stack, level, living, id) -> {
 	        		return living != null && living.isUsingItem() && living.getUseItem() == stack ? 1.0F : 0.0F;
 	        	}
 	        );
-	    	ItemProperties.register(ModItems.IMPACT_GRENADE.get(), 
+	    	ItemProperties.register(InitItems.IMPACT_GRENADE.get(), 
 	        	new ResourceLocation("throwing"), (stack, level, living, id) -> {
 	        		return living != null && living.isUsingItem() && living.getUseItem() == stack ? 1.0F : 0.0F;
 	        	}

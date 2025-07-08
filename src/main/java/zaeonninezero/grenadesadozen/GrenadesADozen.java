@@ -28,7 +28,7 @@ public class GrenadesADozen {
         @Override
         public ItemStack makeIcon()
         {
-            ItemStack stack = new ItemStack(ModItems.SMOKE_GRENADE.get());
+            ItemStack stack = new ItemStack(InitItems.SMOKE_GRENADE.get());
             return stack;
         }
 
@@ -45,11 +45,11 @@ public class GrenadesADozen {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		
 		//Registers all of the Deferred Registers from the init classes.
-		ModEffects.EFFECTS.register(bus);
-		ModEntities.ENTITIES.register(bus);
-		ModItems.ITEMS.register(bus);
-		ModParticleTypes.PARTICLES.register(bus);
-		ModSounds.SOUNDS.register(bus);
+		InitEffects.EFFECTS.register(bus);
+		InitEntities.ENTITIES.register(bus);
+		InitItems.ITEMS.register(bus);
+		InitParticleTypes.PARTICLES.register(bus);
+		InitSounds.SOUNDS.register(bus);
 
 		bus.addListener(this::setup);
 		bus.addListener(this::onClientSetup);
