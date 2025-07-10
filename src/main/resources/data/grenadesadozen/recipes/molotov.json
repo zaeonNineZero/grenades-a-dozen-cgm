@@ -3,15 +3,15 @@
   "materials": [
     {
       "count": 2,
-      "tag": "forge:glass"
+      "item": "minecraft:glass_bottle"
     },
     {
       "count": 1,
       "tag": "minecraft:wool"
     },
     {
-      "count": 1,
-      "item": "minecraft:lava_bucket"
+      "count": 2,
+      "item": "minecraft:magma_cream"
     }
   ],
   "result": {
