@@ -1,0 +1,13 @@
+{
+    "parent": "grenadesadozen:item/he_grenade",
+	"display": {
+		"firstperson_righthand": {
+			"rotation": [30, 225, 0],
+			"translation": [5.75, 5, -7]
+		},
+		"firstperson_lefthand": {
+			"rotation": [30, 45, 0],
+			"translation": [5.75, 5, -7]
+		}
+	}
+}
