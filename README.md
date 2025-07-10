@@ -1,4 +1,9 @@
 # Grenades a Dozen -- an addon for MrCrayfish's Gun Mod
-Grenades a Dozen is an addon for MrCrayfish's Gun Mod by An0m3L1 and zaeonNineZero that adds multiple type of throwable grenades and explosives. Similar in vein to NineZero's Gun Expansion, Grenades a Dozen expands the selection of grenades available in CGM.
+Grenades a Dozen is an addon for MrCrayfish's Gun Mod by An0m3L1 and zaeonNineZero that adds multiple type of throwable grenades. Similar in vein to NineZero's Gun Expansion, Grenades a Dozen expands the selection of grenades available in CGM.
 
-So far this addon only adds a Smoke Grenade, with plans for a few more types of grenades before its official release.
+### Addon Features:
+* Five new grenades, including smoke grenades, incendiary grenades, molotovs, impact grenades, and high-explosive grenades.
+* Smoke grenades emit obstructive smoke particles and apply a visual effect to players who enter the smoke cloud.
+* Incendiary grenades and molotovs light blocks on fire! The molotov ignites on impact while the incendiary grenade has a fuse.
+* All grenades can have their properties changed via the common configuration file. Feel free to make adjustments!
+* Crafting recipes for all grenades, allowing them to be used in survival mode.

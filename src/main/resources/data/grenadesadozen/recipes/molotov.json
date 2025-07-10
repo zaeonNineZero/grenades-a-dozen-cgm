@@ -1,0 +1,21 @@
+{
+  "type": "cgm:workbench",
+  "materials": [
+    {
+      "count": 2,
+      "tag": "forge:glass"
+    },
+    {
+      "count": 1,
+      "tag": "minecraft:wool"
+    },
+    {
+      "count": 1,
+      "item": "minecraft:lava_bucket"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "grenadesadozen:molotov"
+  }
+}
