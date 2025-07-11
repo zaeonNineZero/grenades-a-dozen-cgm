@@ -5,14 +5,14 @@ license="GPL3"
 [[mods]]
 modId="grenadesadozen"
 version="1.0.0"
-displayName="Grenades a Dozen (Dev. Branch)"
+displayName="Grenades a Dozen"
 updateJSONURL=""
 displayURL=""
 logoFile="grenadesadozen_banner.png"
 authors="zaeonNineZero, An0m3L1"
 credits="MrCrayfish, An0m3L1, zaeonNineZero"
 description='''
-Addon for MrCrayfish's Gun Mod that adds multiple type of throwable grenades and explosives.
+An addon for MrCrayfish's Gun Mod that adds multiple type of throwable grenades and explosives.
 '''
 
 [[dependencies.grenadesadozen]]
