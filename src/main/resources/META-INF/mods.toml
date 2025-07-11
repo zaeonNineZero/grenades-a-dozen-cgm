@@ -8,7 +8,7 @@ version="1.0.99"
 displayName="Grenades a Dozen (Dev. Branch)"
 updateJSONURL=""
 displayURL=""
-logoFile="nzgexpansion_banner.png"
+logoFile="grenadesadozen_banner.png"
 authors="zaeonNineZero, An0m3L1"
 credits="MrCrayfish, An0m3L1, zaeonNineZero"
 description='''
@@ -41,4 +41,4 @@ Addon for MrCrayfish's Gun Mod that adds multiple type of throwable grenades and
     side="BOTH"
 
 [modproperties.grenadesadozen]
-    catalogueImageIcon="nzgexpansion_icon.png"
+    catalogueImageIcon="grenadesadozen_icon.png"
