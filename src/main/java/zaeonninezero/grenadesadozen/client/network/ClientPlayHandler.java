@@ -2,12 +2,15 @@ package zaeonninezero.grenadesadozen.client.network;
 
 import net.minecraft.core.particles.ParticleOptions;
 import zaeonninezero.grenadesadozen.GrenadesConfig;
+import zaeonninezero.grenadesadozen.client.audio.SmokeGrenadeExplosionSound;
 import zaeonninezero.grenadesadozen.network.message.*;
 import zaeonninezero.grenadesadozen.init.InitParticleTypes;
+import zaeonninezero.grenadesadozen.init.InitSounds;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleEngine;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
 
@@ -74,7 +77,8 @@ public class ClientPlayHandler
         double diameter = GrenadesConfig.COMMON.smokeGrenadeCloudDiameter.get();
         double vel = 0.004;
         int amount = (int) (diameter * 15);
-
+        Minecraft.getInstance().getSoundManager().play(new SmokeGrenadeExplosionSound(InitSounds.SMOKE_GRENADE_EXPLOSION.getId(), SoundSource.BLOCKS, (float) x,(float) y, (float) z, 1, 1, level.getRandom()));
+        
         /* Spawn smoke cloud */
         for(int i = 0; i < amount; i++)
         {
