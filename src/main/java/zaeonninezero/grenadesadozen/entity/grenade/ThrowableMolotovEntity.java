@@ -71,9 +71,9 @@ public class ThrowableMolotovEntity extends ThrowableGrenadeEntity
 
         Minecraft mc = Minecraft.getInstance();
         // Molotov glass breaking
-        mc.getSoundManager().play(new MolotovExplosionSound(InitSounds.MOLOTOV_BREAK.getId(), SoundSource.BLOCKS, (float)this.getX(),(float)y, (float)this.getZ(), 1, pitch, this.level.getRandom()));
+        //mc.getSoundManager().play(new MolotovExplosionSound(InitSounds.MOLOTOV_BREAK.getId(), SoundSource.BLOCKS, (float)this.getX(),(float)y, (float)this.getZ(), 1, pitch, this.level.getRandom()));
         // Molotov fire blast
-        mc.getSoundManager().play(new MolotovExplosionSound(InitSounds.MOLOTOV_EXPLOSION.getId(), SoundSource.BLOCKS, (float)this.getX(),(float)y, (float)this.getZ(), 1, pitch, this.level.getRandom()));
+        //mc.getSoundManager().play(new MolotovExplosionSound(InitSounds.MOLOTOV_EXPLOSION.getId(), SoundSource.BLOCKS, (float)this.getX(),(float)y, (float)this.getZ(), 1, pitch, this.level.getRandom()));
         
         if(this.level.isClientSide)
             return;
