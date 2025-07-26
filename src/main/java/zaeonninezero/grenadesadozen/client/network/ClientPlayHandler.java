@@ -2,12 +2,15 @@ package zaeonninezero.grenadesadozen.client.network;
 
 import net.minecraft.core.particles.ParticleOptions;
 import zaeonninezero.grenadesadozen.GrenadesConfig;
+import zaeonninezero.grenadesadozen.client.audio.*;
 import zaeonninezero.grenadesadozen.network.message.*;
 import zaeonninezero.grenadesadozen.init.InitParticleTypes;
+import zaeonninezero.grenadesadozen.init.InitSounds;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleEngine;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
 
@@ -27,7 +30,10 @@ public class ClientPlayHandler
         double x = message.getX();
         double y = message.getY();
         double z = message.getZ();
-
+        
+        //Play explosion sound
+        Minecraft.getInstance().getSoundManager().play(new IncendiaryGrenadeExplosionSound(InitSounds.INCENDIARY_GRENADE_EXPLOSION.getId(), SoundSource.BLOCKS, (float) x,(float) y, (float) z, 1, 1, world.getRandom()));
+        
         //Spawn explosion particle
         Particle explosion = spawnParticle(particleManager, InitParticleTypes.EXPLOSION.get(), x, y, z, world.random, 0.0);
         explosion.scale(size);
@@ -50,7 +56,13 @@ public class ClientPlayHandler
         double x = message.getX();
         double y = message.getY();
         double z = message.getZ();
-
+        
+        //Play molotov break sound
+        Minecraft.getInstance().getSoundManager().play(new MolotovExplosionSound(InitSounds.MOLOTOV_BREAK.getId(), SoundSource.BLOCKS, (float) x,(float) y, (float) z, 1, 1, world.getRandom()));
+        
+        //Play explosion sound
+        Minecraft.getInstance().getSoundManager().play(new MolotovExplosionSound(InitSounds.MOLOTOV_EXPLOSION.getId(), SoundSource.BLOCKS, (float) x,(float) y, (float) z, 1, 1, world.getRandom()));
+        
         //Spawn explosion particle
         Particle explosion = spawnParticle(particleManager, InitParticleTypes.EXPLOSION.get(), x, y, z, world.random, 0.0);
         explosion.scale(size);
@@ -67,18 +79,21 @@ public class ClientPlayHandler
     public static void handleExplosionSmokeGrenade(S2CMessageSmokeGrenade message)
     {
         Minecraft mc = Minecraft.getInstance();
-        Level level = Objects.requireNonNull(mc.level);
+        Level world = Objects.requireNonNull(mc.level);
         double x = message.getX();
         double y = message.getY();
         double z = message.getZ();
         double diameter = GrenadesConfig.COMMON.smokeGrenadeCloudDiameter.get();
         double vel = 0.004;
         int amount = (int) (diameter * 15);
-
+        
+        //Play explosion sound
+        Minecraft.getInstance().getSoundManager().play(new SmokeGrenadeExplosionSound(InitSounds.SMOKE_GRENADE_EXPLOSION.getId(), SoundSource.BLOCKS, (float) x,(float) y, (float) z, 1, 1, world.getRandom()));
+        
         /* Spawn smoke cloud */
         for(int i = 0; i < amount; i++)
         {
-            level.addAlwaysVisibleParticle(InitParticleTypes.SMOKE_CLOUD.get(),
+            world.addAlwaysVisibleParticle(InitParticleTypes.SMOKE_CLOUD.get(),
                     true,
                     x+((Math.random()-0.5) * diameter),
                     y+0.1+(Math.random() * (diameter * 0.65)),
