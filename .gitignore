@@ -17,7 +17,7 @@ runServer.launch
 
 # Misc
 .originalCodeCopies/*
-deprecated_builds/*
+saved_copies/*
 cgm-forge-1.19.2-1.3.7.jar
 cgm-expanded-fork-1.19.2.jar
 framework-0.4.2-1.19.2.jar

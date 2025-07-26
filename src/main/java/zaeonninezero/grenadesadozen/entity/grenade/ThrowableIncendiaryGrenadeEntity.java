@@ -64,11 +64,8 @@ public class ThrowableIncendiaryGrenadeEntity extends ThrowableGrenadeEntity
         double y = this.getY() + this.getType().getDimensions().height * 0.5;
         Vec3 center = new Vec3(this.getX(), y, this.getZ());
 
-        //Minecraft.getInstance().getSoundManager().play(new IncendiaryGrenadeExplosionSound(InitSounds.INCENDIARY_GRENADE_EXPLOSION.getId(), SoundSource.BLOCKS, (float)this.getX(),(float)y, (float)this.getZ(), 1, pitch, this.level.getRandom()));
         if(this.level.isClientSide)
-        {
             return;
-        }
         GrenadePacketHandler.getPlayChannel().sendToNearbyPlayers(() ->
                 LevelLocation.create(this.level, this.getX(), y, this.getZ(), 256), new S2CMessageIncendiaryGrenade(this.getX(), y, this.getZ()));
         GrenadeHelper.createFireExplosion(this, radius * 0.6F);
