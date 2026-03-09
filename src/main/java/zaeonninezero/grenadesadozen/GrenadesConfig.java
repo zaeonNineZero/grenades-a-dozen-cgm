@@ -51,8 +51,8 @@ public class GrenadesConfig
             {
                 //this.smokeGrenadeDamage = builder.comment("The damage dealt per second to players and mobs that are inside a Smoke Grenade cloud.").defineInRange("smokeGrenadeDamage", 1.0, 0.0, Double.MAX_VALUE);
             }
-            */
             builder.pop();
+            */
             builder.push("incendiary_grenade");
             {
                 this.incendiaryGrenadeExplosionRadius = builder.comment("The blast radius of Incendiary Grenades. This determines the maximum range in which players, mobs, and blocks may be set on fire.").defineInRange("incendiaryGrenadeExplosionRadius", 3.5, 0.0, Double.MAX_VALUE);
