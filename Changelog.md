@@ -1,6 +1,9 @@
 # Grenades a Dozen Changelog (1.19.2 Releases -- Developer Edition)
 
 
+### 1.0.3 (3/9/26)
+* Fixed smoke grenade behavior due to non-synchronized configs between the client and server. (Issue #5)
+
 ### 1.0.2 (7/26/25)
 * Fixed several crashes that would occur when the mod is loaded on a dedicated server, due to client-side classes being loaded server-side. (Issue #3)
 

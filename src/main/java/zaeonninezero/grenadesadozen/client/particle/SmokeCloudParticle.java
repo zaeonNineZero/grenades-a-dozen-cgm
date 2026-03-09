@@ -1,6 +1,5 @@
 package zaeonninezero.grenadesadozen.client.particle;
 
-import zaeonninezero.grenadesadozen.GrenadesConfig;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
 import net.minecraft.core.particles.SimpleParticleType;
@@ -8,6 +7,7 @@ import net.minecraft.util.Mth;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
+import zaeonninezero.grenadesadozen.GrenadesConfig;
 
 /**
  * Author: MrCrayfish
@@ -24,7 +24,7 @@ public class SmokeCloudParticle extends TextureSheetParticle
         this.setAlpha(1.00f);
         this.setSize(0.25F, 0.25F);
 
-        int life = (int) (GrenadesConfig.COMMON.smokeGrenadeCloudDuration.get() * 20);
+        int life = (int) (GrenadesConfig.SERVER.smokeGrenadeCloudDuration.get() * 20);
         this.lifetime = (int) (life + ((Math.random()-0.5) * (life * 0.25)));
         this.sprites = sprites;
         this.gravity = 3.0E-6F;

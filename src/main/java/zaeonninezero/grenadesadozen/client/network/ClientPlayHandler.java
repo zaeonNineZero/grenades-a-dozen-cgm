@@ -1,20 +1,24 @@
 package zaeonninezero.grenadesadozen.client.network;
 
-import net.minecraft.core.particles.ParticleOptions;
-import zaeonninezero.grenadesadozen.GrenadesConfig;
-import zaeonninezero.grenadesadozen.client.audio.*;
-import zaeonninezero.grenadesadozen.network.message.*;
-import zaeonninezero.grenadesadozen.init.InitParticleTypes;
-import zaeonninezero.grenadesadozen.init.InitSounds;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleEngine;
+import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
+import zaeonninezero.grenadesadozen.GrenadesConfig;
+import zaeonninezero.grenadesadozen.client.audio.IncendiaryGrenadeExplosionSound;
+import zaeonninezero.grenadesadozen.client.audio.MolotovExplosionSound;
+import zaeonninezero.grenadesadozen.client.audio.SmokeGrenadeExplosionSound;
+import zaeonninezero.grenadesadozen.init.InitParticleTypes;
+import zaeonninezero.grenadesadozen.init.InitSounds;
+import zaeonninezero.grenadesadozen.network.message.S2CMessageIncendiaryGrenade;
+import zaeonninezero.grenadesadozen.network.message.S2CMessageMolotov;
+import zaeonninezero.grenadesadozen.network.message.S2CMessageSmokeGrenade;
 
-import java.util.*;
+import java.util.Objects;
 
 /**
  * Original Author: MrCrayfish
@@ -83,7 +87,7 @@ public class ClientPlayHandler
         double x = message.getX();
         double y = message.getY();
         double z = message.getZ();
-        double diameter = GrenadesConfig.COMMON.smokeGrenadeCloudDiameter.get();
+        double diameter = GrenadesConfig.SERVER.smokeGrenadeCloudDiameter.get();
         double vel = 0.004;
         int amount = (int) (diameter * 15);
         

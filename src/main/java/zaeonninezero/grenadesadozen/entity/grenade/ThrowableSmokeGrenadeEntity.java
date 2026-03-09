@@ -1,22 +1,10 @@
 package zaeonninezero.grenadesadozen.entity.grenade;
 
 import com.mrcrayfish.framework.api.network.LevelLocation;
-import zaeonninezero.grenadesadozen.GrenadesConfig;
-import zaeonninezero.grenadesadozen.client.audio.SmokeGrenadeExplosionSound;
-import zaeonninezero.grenadesadozen.entity.SmokeCloud;
-import zaeonninezero.grenadesadozen.init.InitEntities;
-import zaeonninezero.grenadesadozen.init.InitItems;
-import zaeonninezero.grenadesadozen.init.InitParticleTypes;
-import zaeonninezero.grenadesadozen.init.InitSounds;
-import zaeonninezero.grenadesadozen.network.GrenadePacketHandler;
-import zaeonninezero.grenadesadozen.network.message.S2CMessageSmokeGrenade;
 import com.mrcrayfish.guns.entity.ThrowableGrenadeEntity;
-import com.mrcrayfish.guns.network.PacketHandler;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -25,8 +13,14 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.fml.common.Mod;
-
 import org.jetbrains.annotations.NotNull;
+import zaeonninezero.grenadesadozen.GrenadesConfig;
+import zaeonninezero.grenadesadozen.entity.SmokeCloud;
+import zaeonninezero.grenadesadozen.init.InitEntities;
+import zaeonninezero.grenadesadozen.init.InitItems;
+import zaeonninezero.grenadesadozen.init.InitParticleTypes;
+import zaeonninezero.grenadesadozen.network.GrenadePacketHandler;
+import zaeonninezero.grenadesadozen.network.message.S2CMessageSmokeGrenade;
 
 /**
  * Author: MrCrayfish
@@ -73,7 +67,7 @@ public class ThrowableSmokeGrenadeEntity extends ThrowableGrenadeEntity
     {
         if (result.getType() == HitResult.Type.BLOCK && !this.level.isClientSide)
         {
-            double radius = GrenadesConfig.COMMON.smokeGrenadeCloudDiameter.get() * 0.75;
+            double radius = GrenadesConfig.SERVER.smokeGrenadeCloudDiameter.get() * 0.75;
             if (radius > 0)
             {
                 BlockPos grenadePos = new BlockPos(this.getX(), this.getY(), this.getZ());
@@ -117,8 +111,8 @@ public class ThrowableSmokeGrenadeEntity extends ThrowableGrenadeEntity
     public void onDeath()
     {
         double y = this.getY() + this.getType().getDimensions().height * 0.5;
-        double radius = GrenadesConfig.COMMON.smokeGrenadeCloudDiameter.get() * 0.5;
-        double duration = ((GrenadesConfig.COMMON.smokeGrenadeCloudDuration.get() - 3) * 20);
+        double radius = GrenadesConfig.SERVER.smokeGrenadeCloudDiameter.get() * 0.5;
+        double duration = ((GrenadesConfig.SERVER.smokeGrenadeCloudDuration.get() - 3) * 20);
         @NotNull SimpleParticleType particle = InitParticleTypes.SMOKE_EFFECT.get();
         if(!this.level.isClientSide)
         {
